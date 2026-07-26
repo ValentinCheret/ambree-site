@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ambree Studio — Création de sites web à Valence &amp; Drôme</title>
+<meta name="description" content="Ambree Studio crée des sites vitrine sur mesure pour les commerçants, restaurateurs et artisans de Valence et de la Drôme. Design chaleureux, accompagnement local, devis gratuit.">
+
+<script>
+  (function () {
+    var storedTheme = localStorage.getItem("ambree-theme");
+    var theme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+
+    var storedLang = localStorage.getItem("ambree-lang");
+    if (storedLang) document.documentElement.setAttribute("lang", storedLang);
+  })();
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='14' fill='%23c67139'/%3E%3Crect x='12' y='15' width='20' height='5' rx='2.5' fill='%23f5ead8'/%3E%3Ccircle cx='16' cy='30' r='6' fill='%23c9d8b8'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="scroll-sentinel" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="14" fill="var(--accent)"/>
+        <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
+        <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
+      </svg>
+      <span>ambree<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#maintenance" data-i18n="nav.maintenance">Maintenance</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <span class="nav-locale">
+        <i class="ph ph-map-pin"></i> Valence &amp; Drôme
+      </span>
+    </nav>
+
+    <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="cta.contact">Discutons de votre projet</a>
+
+    <button class="lang-toggle" id="langToggle" aria-label="Switch to English">
+      <span class="lang-flag" aria-hidden="true">🇬🇧</span>
+    </button>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" aria-pressed="false">
+      <i class="ph ph-moon"></i>
+    </button>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+      <i class="ph ph-list"></i>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><i class="ph ph-map-pin"></i> Valence &amp; Drôme</span>
+        <h1 data-i18n="hero.h1">Un site vitrine à votre image.</h1>
+        <p class="hero-sub" data-i18n="hero.sub">Design sur mesure, accompagnement local et devis personnalisé, pour commerçants, restaurateurs et artisans.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary" data-i18n="cta.contact">Discutons de votre projet</a>
+          <a href="#services" class="btn btn-ghost" data-i18n="cta.pricing">Voir les tarifs</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="hero-photo pattern-warm" aria-hidden="true">
+          <span class="pattern-shape shape-circle"></span>
+          <span class="pattern-shape shape-square"></span>
+        </div>
+        <div class="hero-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="12" y="15" width="24" height="6" rx="3" fill="var(--bg)"/>
+            <circle cx="18" cy="32" r="7" fill="var(--sage-light)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES / FORMULES ================= -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 data-i18n="services.h2">Trois formules, un site en ligne sous deux à quatre semaines.</h2>
+        <p data-i18n="services.p">Un template personnalisé aux couleurs de votre entreprise, pensé pour votre activité et votre clientèle.</p>
+      </div>
+
+      <div class="plan-grid">
+        <article class="plan-card" data-reveal>
+          <div class="plan-top"><h3 data-i18n="plan.essential.name">Essentiel</h3></div>
+          <div class="plan-price">690 € – 990 €</div>
+          <p class="plan-desc" data-i18n="plan.essential.desc">Template personnalisé aux couleurs de l'entreprise, responsive, formulaire de contact, un aller-retour de corrections.</p>
+        </article>
+
+        <article class="plan-card is-featured" data-reveal>
+          <div class="plan-top">
+            <h3 data-i18n="plan.pro.name">Pro</h3>
+            <span class="plan-badge" data-i18n="badge.popular">Le plus choisi</span>
+          </div>
+          <div class="plan-price">1 200 € – 1 800 €</div>
+          <p class="plan-desc" data-i18n="plan.pro.desc">Design semi-sur-mesure, galerie photo, Google Maps, liens réseaux sociaux, référencement local de base, deux allers-retours de corrections.</p>
+        </article>
+
+        <article class="plan-card" data-reveal>
+          <div class="plan-top"><h3 data-i18n="plan.premium.name">Premium</h3></div>
+          <div class="plan-price">2 200 € – 3 200 €</div>
+          <p class="plan-desc" data-i18n="plan.premium.desc">Design sur-mesure, module de réservation ou carte interactive, blog d'actualités, SEO renforcé, formation à la prise en main.</p>
+        </article>
+      </div>
+
+      <div class="options" data-reveal>
+        <h3 data-i18n="options.h3">À ajouter à toute formule</h3>
+        <div class="pill-row">
+          <span class="pill" data-i18n="opt.copy">Rédaction des textes</span>
+          <span class="pill" data-i18n="opt.photo">Séance photo pro</span>
+          <span class="pill" data-i18n="opt.ecommerce">E-commerce simple</span>
+          <span class="pill" data-i18n="opt.lang">Version FR / EN</span>
+          <span class="pill" data-i18n="opt.logo">Création de logo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAINTENANCE ================= -->
+  <section class="maintenance" id="maintenance">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 data-i18n="maintenance.h2">Un site à jour, sans y penser.</h2>
+        <p data-i18n="maintenance.p">Sans engagement, préavis d'un mois.</p>
+      </div>
+
+      <div class="tier-list" data-reveal>
+        <div class="tier-row">
+          <div class="tier-name-line"><h3 data-i18n="tier.serenite.name">Sérénité</h3></div>
+          <div class="tier-price">19 € – 29 € <span data-i18n="unit.month">/ mois</span></div>
+          <p class="tier-desc" data-i18n="tier.serenite.desc">Hébergement, nom de domaine, certificat SSL, sauvegardes régulières, mises à jour techniques, suivi de disponibilité.</p>
+        </div>
+
+        <div class="tier-row">
+          <div class="tier-name-line">
+            <h3 data-i18n="tier.confort.name">Confort</h3>
+            <span class="tier-badge" data-i18n="badge.popular">Le plus choisi</span>
+          </div>
+          <div class="tier-price">39 € – 59 € <span data-i18n="unit.month">/ mois</span></div>
+          <p class="tier-desc" data-i18n="tier.confort.desc">Tout Sérénité, plus une heure de modification de contenu par mois (textes, photos, horaires, menu), support par email sous 48h.</p>
+        </div>
+
+        <div class="tier-row">
+          <div class="tier-name-line"><h3 data-i18n="tier.business.name">Business</h3></div>
+          <div class="tier-price">69 € – 99 € <span data-i18n="unit.month">/ mois</span></div>
+          <p class="tier-desc" data-i18n="tier.business.desc">Tout Confort, plus deux à trois heures de modification par mois, suivi SEO local mensuel, support prioritaire, rapport de visibilité trimestriel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY LOCAL ================= -->
+  <section class="why-local">
+    <div class="wrap why-grid">
+      <div class="why-photo pattern-cool" data-reveal aria-hidden="true">
+        <span class="pattern-shape shape-bar"></span>
+        <span class="pattern-shape shape-circle alt"></span>
+        <span class="pattern-shape shape-square alt"></span>
+      </div>
+
+      <div data-reveal>
+        <div class="section-head" style="margin-bottom: 32px;">
+          <h2 data-i18n="why.h2">Pourquoi un accompagnement local.</h2>
+        </div>
+
+        <div class="why-points">
+          <div class="why-point">
+            <span class="why-icon"><i class="ph ph-map-pin"></i></span>
+            <p><strong data-i18n="why1.title">Un interlocuteur unique à Valence</strong><span data-i18n="why1.body">Disponible pour un rendez-vous en personne, pas un ticket dans une file d'attente.</span></p>
+          </div>
+          <div class="why-point">
+            <span class="why-icon"><i class="ph ph-arrows-clockwise"></i></span>
+            <p><strong data-i18n="why2.title">Un suivi dans la durée</strong><span data-i18n="why2.body">Réactivité au quotidien, pas juste une livraison ponctuelle puis plus rien.</span></p>
+          </div>
+          <div class="why-point">
+            <span class="why-icon"><i class="ph ph-storefront"></i></span>
+            <p><strong data-i18n="why3.title">Un site pensé pour votre activité</strong><span data-i18n="why3.body">Menu, horaires, réservations, avis clients : les vrais besoins d'un commerce.</span></p>
+          </div>
+          <div class="why-point">
+            <span class="why-icon"><i class="ph ph-graduation-cap"></i></span>
+            <p><strong data-i18n="why4.title">Une prise en main accompagnée</strong><span data-i18n="why4.body">Pour gérer vous-même vos mises à jour du quotidien, sans dépendre de nous.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT CTA ================= -->
+  <section id="contact">
+    <div class="contact-band" data-reveal>
+      <div class="contact-inner">
+        <div>
+          <h2 data-i18n="contact.h2">Discutons de votre projet.</h2>
+          <p data-i18n="contact.p">Devis personnalisé et gratuit après un premier échange, sans engagement.</p>
+        </div>
+
+        <div class="contact-actions">
+          <a href="contact.html" class="btn btn-light">
+            <i class="ph ph-note-pencil"></i> <span data-i18n="cta.form">Remplir le formulaire</span>
+          </a>
+          <a href="tel:+33660251797" class="btn btn-light">
+            <i class="ph ph-phone"></i> 06 60 25 17 97
+          </a>
+          <a href="mailto:contact@ambree.fr" class="contact-line">
+            <i class="ph ph-envelope-simple"></i> contact@ambree.fr
+          </a>
+          <span class="contact-line">
+            <i class="ph ph-globe"></i> ambree.fr
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="footer-brand">
+      <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="14" fill="var(--accent)"/>
+        <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
+        <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
+      </svg>
+      ambree.
+    </span>
+    <span data-i18n="footer.copy">&copy; 2026 Ambree Studio — Valence, Drôme</span>
+    <a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales</a>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<script src="script.js"></script>
+</body>
+</html>

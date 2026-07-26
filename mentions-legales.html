@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentions légales — Ambree Studio</title>
+<meta name="robots" content="noindex">
+
+<script>
+  (function () {
+    var storedTheme = localStorage.getItem("ambree-theme");
+    var theme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+
+    var storedLang = localStorage.getItem("ambree-lang");
+    if (storedLang) document.documentElement.setAttribute("lang", storedLang);
+  })();
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='14' fill='%23c67139'/%3E%3Crect x='12' y='15' width='20' height='5' rx='2.5' fill='%23f5ead8'/%3E%3Ccircle cx='16' cy='30' r='6' fill='%23c9d8b8'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="scroll-sentinel" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="14" fill="var(--accent)"/>
+        <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
+        <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
+      </svg>
+      <span>ambree<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#services" data-i18n="nav.services">Services</a>
+      <a href="index.html#maintenance" data-i18n="nav.maintenance">Maintenance</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <span class="nav-locale">
+        <i class="ph ph-map-pin"></i> Valence &amp; Drôme
+      </span>
+    </nav>
+
+    <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="cta.contact">Discutons de votre projet</a>
+
+    <button class="lang-toggle" id="langToggle" aria-label="Switch to English">
+      <span class="lang-flag" aria-hidden="true">🇬🇧</span>
+    </button>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" aria-pressed="false">
+      <i class="ph ph-moon"></i>
+    </button>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+      <i class="ph ph-list"></i>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="legal">
+    <div class="wrap">
+      <h1 data-i18n="legal.title">Mentions légales</h1>
+      <p class="legal-en-notice" data-i18n="legal.enNotice" data-i18n-hide-if-empty hidden></p>
+      <p class="updated">
+        <span data-i18n="legal.updatedPre">Page à finaliser dès l'immatriculation de l'entreprise. Les champs marqués</span>
+        <span class="todo" data-i18n="todo.plain">à compléter</span>
+        <span data-i18n="legal.updatedPost">doivent être remplis avant la mise en ligne publique du site.</span>
+      </p>
+
+      <section>
+        <h2 data-i18n="legal.editor.h2">Éditeur du site</h2>
+        <p>
+          <span data-i18n="label.companyName">Raison sociale</span> : <span class="todo" data-i18n="todo.plain">à compléter</span><br>
+          <span data-i18n="label.legalForm">Forme juridique</span> : <span class="todo" data-i18n="todo.legalForm">à compléter (ex. entreprise individuelle / micro-entreprise)</span><br>
+          <span data-i18n="label.manager">Nom du responsable</span> : Valentin Cheret<br>
+          <span data-i18n="label.registeredAddress">Adresse du siège</span> : <span class="todo" data-i18n="todo.plain">à compléter</span><br>
+          <span data-i18n="label.siret">SIRET</span> : <span class="todo" data-i18n="todo.siret">à compléter après immatriculation</span><br>
+          <span data-i18n="label.vat">Numéro de TVA intracommunautaire</span> : <span class="todo" data-i18n="todo.vat">à compléter si applicable</span><br>
+          <span data-i18n="label.phone">Téléphone</span> : <a class="inline-link" href="tel:+33660251797">06 60 25 17 97</a><br>
+          <span data-i18n="label.email">Email</span> : <a class="inline-link" href="mailto:contact@ambree.fr">contact@ambree.fr</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 data-i18n="legal.director.h2">Directeur de la publication</h2>
+        <p>Valentin Cheret.</p>
+      </section>
+
+      <section>
+        <h2 data-i18n="legal.hosting.h2">Hébergement</h2>
+        <p>
+          <span data-i18n="label.host">Hébergeur</span> : <span class="todo" data-i18n="todo.host">à compléter selon l'hébergeur choisi</span><br>
+          <span data-i18n="label.address">Adresse</span> : <span class="todo" data-i18n="todo.plain">à compléter</span><br>
+          <span data-i18n="label.phone">Téléphone</span> : <span class="todo" data-i18n="todo.plain">à compléter</span>
+        </p>
+      </section>
+
+      <section>
+        <h2 data-i18n="legal.ip.h2">Propriété intellectuelle</h2>
+        <p data-i18n="legal.ip.body">L'ensemble des contenus présents sur ce site (textes, images, logo, charte graphique) est la propriété d'Ambree Studio, sauf mention contraire. Toute reproduction ou représentation, totale ou partielle, sans autorisation préalable est interdite.</p>
+      </section>
+
+      <section>
+        <h2 data-i18n="legal.data.h2">Données personnelles</h2>
+        <p data-i18n="legal.data.body1">Ce site ne collecte actuellement aucune donnée personnelle par formulaire : les prises de contact se font par appel téléphonique ou email, à l'initiative du visiteur. Si un formulaire de contact ou un outil de mesure d'audience est ajouté ultérieurement, cette section sera mise à jour pour préciser les données collectées, leur finalité, leur durée de conservation et les modalités d'exercice des droits d'accès, de rectification et de suppression prévus par le RGPD.</p>
+        <p><span data-i18n="legal.data.contactPre">Pour toute question relative à vos données, contactez :</span> <a class="inline-link" href="mailto:contact@ambree.fr">contact@ambree.fr</a>.</p>
+      </section>
+
+      <section>
+        <h2 data-i18n="legal.cookies.h2">Cookies</h2>
+        <p data-i18n="legal.cookies.body">Ce site n'utilise actuellement aucun cookie de mesure d'audience ni traceur publicitaire.</p>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="footer-brand">
+      <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+        <rect width="48" height="48" rx="14" fill="var(--accent)"/>
+        <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
+        <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
+      </svg>
+      ambree.
+    </span>
+    <span data-i18n="footer.copy">&copy; 2026 Ambree Studio — Valence, Drôme</span>
+    <a href="index.html" data-i18n="footer.back">Retour au site</a>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<script src="script.js"></script>
+</body>
+</html>
