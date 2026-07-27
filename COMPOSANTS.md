@@ -27,6 +27,7 @@ Remplacent les photos stock (Picsum donnait des images aléatoires hors-sujet). 
 ### Effet tilt 3D + halo curseur (`script.js`, fonction `initTiltCard()`)
 Fonction générique : incline légèrement un panneau en suivant la souris (±10°) et fait suivre un halo lumineux. Prend en paramètres `{ zone, photo, mark, baseRotateDeg, markBaseRotateDeg }`. Respecte `prefers-reduced-motion` (désactivé automatiquement). Déjà appliqué à `.hero-photo` (avec le badge `.hero-mark` en parallaxe) et `.why-photo`.
 **Pour l'appliquer ailleurs** : ajouter le CSS `transition`, `transform-style: preserve-3d` et le pseudo-élément `::after` (halo) sur le nouvel élément (copier le bloc `.why-photo` dans `styles.css` comme modèle), puis appeler `initTiltCard({ zone: monElement, photo: monElement })` dans `script.js`.
+**Sur mobile/tactile** : pas de curseur, donc pas de survol possible. `initTiltCard` détecte ça via `(hover: hover) and (pointer: fine)` et n'attache rien ; une animation CSS `@media (hover: none)` prend le relais avec un léger mouvement automatique en boucle (`idle-tilt-hero`, `idle-tilt-mark`, `idle-tilt-why` dans `styles.css`). Si tu ajoutes le tilt à un nouvel élément, pense à lui créer aussi son animation d'inclinaison automatique pour le mobile, sinon il restera figé sur téléphone.
 
 ### Apparition au scroll (`[data-reveal]`)
 Ajouter l'attribut `data-reveal` à n'importe quel élément pour qu'il apparaisse en fondu/glissé quand il entre dans l'écran. Géré par `IntersectionObserver` (pas d'écouteur de scroll). Respecte le mode mouvement réduit.
