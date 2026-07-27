@@ -450,6 +450,22 @@ h3 { font-size: 1.3rem; }
 }
 .hero-mark svg { width: 62%; height: 62%; }
 
+/* Touch devices have no cursor, so the pointer-follow tilt in script.js
+   never triggers. Swap it for a slow, self-playing idle tilt instead. */
+@media (hover: none) {
+  .hero-photo { animation: idle-tilt-hero 7s ease-in-out infinite; }
+  .hero-mark { animation: idle-tilt-mark 7s ease-in-out infinite; }
+}
+
+@keyframes idle-tilt-hero {
+  0%, 100% { transform: rotate(-3deg) rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotate(-3deg) rotateX(4deg) rotateY(-5deg); }
+}
+@keyframes idle-tilt-mark {
+  0%, 100% { transform: rotate(6deg) translate(0, 0); }
+  50% { transform: rotate(6deg) translate(5px, -4px); }
+}
+
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { max-width: 320px; margin-top: 8px; }
@@ -676,6 +692,17 @@ h3 { font-size: 1.3rem; }
 
 @media (prefers-reduced-motion: reduce) {
   .why-photo { transition: none; }
+}
+
+/* Touch devices have no cursor, so the pointer-follow tilt in script.js
+   never triggers. Swap it for a slow, self-playing idle tilt instead. */
+@media (hover: none) {
+  .why-photo { animation: idle-tilt-why 8s ease-in-out infinite; }
+}
+
+@keyframes idle-tilt-why {
+  0%, 100% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(-4deg) rotateY(5deg); }
 }
 
 .why-points { display: grid; gap: 28px; }

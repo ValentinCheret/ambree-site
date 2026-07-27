@@ -387,6 +387,9 @@ if (contactForm) {
 // `photo` gets the tilt/glow. `mark` (optional) gets an inverse parallax shift.
 function initTiltCard({ zone, photo, mark, baseRotateDeg = 0, markBaseRotateDeg = 6 }) {
   if (!zone || !photo || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  // Touch devices have no cursor to follow; a CSS idle-tilt animation (see styles.css,
+  // "@media (hover: none)") takes over instead, so skip attaching pointer listeners here.
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
   const maxTiltDeg = 10;
   const maxMarkShift = 10;
