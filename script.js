@@ -689,8 +689,9 @@ if (contactForm) {
 // Trois garde-fous, à conserver si les réglages sont modifiés :
 //  - la couleur est lue dans --accent, jamais codée en dur, pour que la trame
 //    suive le thème clair comme sombre ;
-//  - rien n'est attaché au tactile ni en mouvement réduit — l'effet dépend d'un
-//    curseur, et il n'a pas à s'imposer à qui demande moins d'animation ;
+//  - au tactile et en mouvement réduit, le canvas est purement et simplement
+//    retiré : sans curseur l'effet se réduisait à son état le plus faible, donc
+//    invisible sur un écran étroit (voir le bloc final) ;
 //  - la boucle s'arrête dès que le curseur s'immobilise : au repos, le coût
 //    processeur retombe à zéro au lieu de tourner en continu.
 //
@@ -786,10 +787,7 @@ function trameBoucle() {
   trameRaf = requestAnimationFrame(trameBoucle);
 }
 
-if (trameCtx) {
-  // La trame est dessinée pour tout le monde : au doigt comme en mouvement
-  // réduit, elle reste un simple grain fixe, tracé une seule fois, sans aucun
-  // coût par la suite. Seule la réaction au curseur est conditionnelle.
+if (trameActive) {
   trameDimensionner();
   rafraichirTrame();
 
@@ -806,9 +804,7 @@ if (trameCtx) {
     attributes: true,
     attributeFilter: ["data-theme"],
   });
-}
 
-if (trameActive) {
   window.addEventListener("mousemove", (e) => {
     trameCible = { x: e.clientX, y: e.clientY };
     // Au tout premier mouvement, on cale la position lissée sur le curseur :
@@ -817,6 +813,13 @@ if (trameActive) {
     trameDernierMouvement = performance.now();
     if (!trameRaf) trameRaf = requestAnimationFrame(trameBoucle);
   });
+} else if (trameCanvas) {
+  // Sur téléphone, la trame n'apportait rien : l'espacement calibré pour un
+  // grand écran ne laissait qu'une cinquantaine de points, et sans curseur il
+  // ne restait que l'état le plus faible de l'effet, donc invisible.
+  // Plutôt que de laisser un canvas inerte en plein écran, on le retire.
+  // Même chose en mouvement réduit, où l'animation n'a pas lieu d'être.
+  trameCanvas.remove();
 }
 
 // 3D tilt + cursor-follow glow, driven by pointermove (not scroll).

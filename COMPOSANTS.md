@@ -52,7 +52,7 @@ Réglages dans l'objet `TRAME` en tête de section. L'intensité retenue est la 
 **Trois garde-fous à conserver si les réglages changent :**
 1. La couleur est lue dans `--accent`, jamais codée en dur : la trame suit le thème (terracotta sur crème, orangé clair sur charbon).
 2. **La boucle s'arrête** dès que le curseur s'immobilise (`trameRaf = 0`). L'original recalculait tout en permanence ; ici le coût au repos est nul. Ne pas transformer ça en boucle continue.
-3. Au tactile et en mouvement réduit, **seul le dessin statique** est réalisé — une fois, sans aucun coût ensuite. Seule la réaction au curseur est conditionnelle.
+3. **Au tactile et en mouvement réduit, le canvas est retiré du DOM** (`trameCanvas.remove()`), donc la trame n'existe pas du tout sur téléphone. Une première version y laissait le dessin statique, mais le résultat était invisible : l'espacement de 96 px calibré pour un grand écran ne laissait qu'une cinquantaine de points sur 375 px, et sans curseur il ne restait que l'état le plus faible de l'effet. Si tu veux la rétablir un jour sur mobile, il faut **aussi** resserrer `pas` (~60) et monter `alphaRepos` (~0,09), sinon elle sera de nouveau imperceptible.
 
 **Contraste** : au-delà d'environ `alphaRepos: 0.16`, un point situé derrière un caractère entame sérieusement la lisibilité. Au réglage actuel (0.06), le texte atténué passe de 6,26:1 à 5,90:1 en thème clair — toujours au-dessus du seuil AA.
 
