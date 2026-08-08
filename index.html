@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ambree Studio — Création de sites web à Valence &amp; Drôme</title>
 <meta name="description" content="Ambree Studio crée des sites vitrine sur mesure pour les commerçants, restaurateurs et artisans de Valence et de la Drôme. Design chaleureux, accompagnement local, devis gratuit.">
+<link rel="canonical" href="https://ambree.fr/">
+
+<!-- Aperçu au partage (SMS, WhatsApp, Facebook, LinkedIn…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ambree Studio">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://ambree.fr/">
+<meta property="og:title" content="Ambree Studio — Création de sites web à Valence &amp; Drôme">
+<meta property="og:description" content="Sites vitrine sur mesure pour commerçants, restaurateurs et artisans de Valence et de la Drôme. Accompagnement local, devis gratuit.">
+<meta property="og:image" content="https://ambree.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ambree Studio — création de sites web à Valence et dans la Drôme">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#c67139">
 
 <script>
   (function () {
@@ -23,9 +38,141 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=11">
+
+<!-- Données structurées pour le référencement local (fiche entreprise dans
+     les résultats Google / Google Maps).
+     Pas de champ "geo" : les coordonnées GPS exactes du siège ne sont pas
+     connues, et mieux vaut aucune coordonnée qu'une position approximative.
+     Pas de "vatID" non plus : l'entreprise relève de la franchise en base de
+     TVA et n'a donc pas de numéro intracommunautaire. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://ambree.fr/#studio",
+  "name": "Ambree Studio",
+  "legalName": "Chéret Valentin Jean-Marie Francis",
+  "description": "Création de sites vitrine sur mesure pour les commerçants, restaurateurs et artisans de Valence et de la Drôme.",
+  "url": "https://ambree.fr/",
+  "email": "contact@ambree.fr",
+  "telephone": "+33660251797",
+  "image": "https://ambree.fr/og-image.png",
+  "priceRange": "690 € - 3 200 €",
+  "founder": { "@type": "Person", "name": "Valentin Chéret" },
+  "foundingDate": "2026-07-27",
+  "knowsLanguage": ["fr", "en"],
+  "identifier": [
+    { "@type": "PropertyValue", "name": "SIREN", "value": "108347469" },
+    { "@type": "PropertyValue", "name": "SIRET", "value": "10834746900018" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 allée Edith Piaf",
+    "postalCode": "26000",
+    "addressLocality": "Valence",
+    "addressRegion": "Drôme",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Valence" },
+    { "@type": "AdministrativeArea", "name": "Drôme" }
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": "Site vitrine — formule Essentiel" },
+      "priceSpecification": { "@type": "PriceSpecification", "minPrice": 690, "maxPrice": 990, "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": "Site vitrine — formule Pro" },
+      "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1200, "maxPrice": 1800, "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": "Site vitrine — formule Premium" },
+      "priceSpecification": { "@type": "PriceSpecification", "minPrice": 2200, "maxPrice": 3200, "priceCurrency": "EUR" }
+    }
+  ]
+}
+</script>
+
+<!-- FAQ balisée : permet à Google d'afficher les questions directement sous
+     le lien du site. Le texte doit rester identique à celui de la section
+     .faq du corps de page (sinon Google ignore le balisage). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pourquoi une fourchette de prix et pas un prix fixe ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Parce que deux commerces n'ont pas les mêmes besoins. Trois choses font varier le prix à l'intérieur d'une formule : le nombre de pages, le degré de personnalisation du design et la complexité technique (réservation, carte interactive, boutique). Le devis, lui, est ferme : vous savez exactement ce que vous payez avant que nous commencions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se passe le paiement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nous en discutons au moment du devis et nous nous adaptons à votre trésorerie : échelonnement, paiement en plusieurs fois, rien n'est figé d'avance. C'est aussi ça, traiter avec quelqu'un de local plutôt qu'avec un formulaire d'abonnement." }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps avant que mon site soit en ligne ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Comptez deux à quatre semaines à partir du moment où nous avons vos contenus. Le délai dépend surtout de la rapidité avec laquelle vous nous transmettez vos textes et vos photos : c'est presque toujours ce qui fait avancer ou traîner un projet." }
+    },
+    {
+      "@type": "Question",
+      "name": "Qui écrit les textes du site ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Vous, dans la plupart des cas : personne ne connaît votre métier et vos clients mieux que vous. Nous vous guidons sur ce qu'il faut dire et à quel endroit. Si vous préférez ne pas vous en occuper, la rédaction complète est proposée en option." }
+    },
+    {
+      "@type": "Question",
+      "name": "Et les photos ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Vos propres photos conviennent souvent très bien, surtout pour un commerce. Si elles manquent ou ne rendent pas justice à votre lieu, une séance photo professionnelle est disponible en option." }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon site fonctionnera-t-il sur téléphone ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, sur toutes les formules, sans supplément. C'est même la priorité : la majorité de vos clients vous cherchera depuis un téléphone, souvent dans la rue, juste avant de pousser votre porte." }
+    },
+    {
+      "@type": "Question",
+      "name": "À qui appartient le site une fois livré ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "À vous. Le site vous appartient et vous en recevez les fichiers. Vous n'êtes lié à personne : ni à nous, ni à un abonnement obligatoire pour qu'il reste en ligne." }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il si j'arrête la maintenance ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nous vous remettons une sauvegarde complète de votre site. Vous êtes libre de changer d'hébergeur ou de prestataire quand vous le souhaitez, sans rien perdre. Le préavis est d'un mois, sans engagement de durée." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
+
+<a class="skip-link" href="#top" data-i18n="a11y.skip">Aller au contenu</a>
+
+<!-- Sprite d'icônes (Phosphor Regular, licence MIT), inline pour supprimer la
+     dépendance à unpkg et afficher les icônes dès le premier rendu.
+     Usage : <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg> -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol>
+<symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol>
+<symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 256 256"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></symbol>
+<symbol id="i-arrows-clockwise" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"/></symbol>
+<symbol id="i-storefront" viewBox="0 0 256 256"><path d="M232,96a7.89,7.89,0,0,0-.3-2.2L217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.8A7.89,7.89,0,0,0,24,96h0v16a40,40,0,0,0,16,32v72a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V144a40,40,0,0,0,16-32V96ZM54,48H202l11.42,40H42.61Zm50,56h48v8a24,24,0,0,1-48,0Zm-16,0v8a24,24,0,0,1-35.12,21.26,7.88,7.88,0,0,0-1.82-1.06A24,24,0,0,1,40,112v-8ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm4.93-75.8a8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48v8A24,24,0,0,1,204.93,132.2Z"/></symbol>
+<symbol id="i-key" viewBox="0 0 256 256"><path d="M216.57,39.43A80,80,0,0,0,83.91,120.78L28.69,176A15.86,15.86,0,0,0,24,187.31V216a16,16,0,0,0,16,16H72a8,8,0,0,0,8-8V208H96a8,8,0,0,0,8-8V184h16a8,8,0,0,0,5.66-2.34l9.56-9.57A79.73,79.73,0,0,0,160,176h.1A80,80,0,0,0,216.57,39.43ZM224,98.1c-1.09,34.09-29.75,61.86-63.89,61.9H160a63.7,63.7,0,0,1-23.65-4.51,8,8,0,0,0-8.84,1.68L116.69,168H96a8,8,0,0,0-8,8v16H72a8,8,0,0,0-8,8v16H40V187.31l58.83-58.82a8,8,0,0,0,1.68-8.84A63.72,63.72,0,0,1,96,95.92c0-34.14,27.81-62.8,61.9-63.89A64,64,0,0,1,224,98.1ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol>
+<symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></symbol>
+<symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol>
+<symbol id="i-note-pencil" viewBox="0 0 256 256"><path d="M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></symbol>
+<symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 256 256"><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"/></symbol>
+</svg>
 
 <div id="scroll-sentinel" aria-hidden="true"></div>
 
@@ -45,8 +192,11 @@
       <a href="#maintenance" data-i18n="nav.maintenance">Maintenance</a>
       <a href="contact.html" data-i18n="nav.contact">Contact</a>
       <span class="nav-locale">
-        <i class="ph ph-map-pin"></i> Valence &amp; Drôme
+        <svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg> Valence &amp; Drôme
       </span>
+      <!-- Reprise du CTA à l'intérieur du menu dépliant : sur téléphone,
+           .nav-cta (frère de .nav-links) est masqué et resterait inatteignable. -->
+      <a href="contact.html" class="btn btn-primary nav-cta-mobile" data-i18n="cta.contact">Discutons de votre projet</a>
     </nav>
 
     <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="cta.contact">Discutons de votre projet</a>
@@ -56,11 +206,11 @@
     </button>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" aria-pressed="false">
-      <i class="ph ph-moon"></i>
+      <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
     </button>
 
     <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-      <i class="ph ph-list"></i>
+      <svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg>
     </button>
   </div>
 </header>
@@ -71,7 +221,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow"><i class="ph ph-map-pin"></i> Valence &amp; Drôme</span>
+        <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg> Valence &amp; Drôme</span>
         <h1 data-i18n="hero.h1">Un site vitrine à votre image.</h1>
         <p class="hero-sub" data-i18n="hero.sub">Design sur mesure, accompagnement local et devis personnalisé, pour commerçants, restaurateurs et artisans.</p>
         <div class="hero-actions">
@@ -103,11 +253,23 @@
         <p data-i18n="services.p">Un template personnalisé aux couleurs de votre entreprise, pensé pour votre activité et votre clientèle.</p>
       </div>
 
+      <!-- Formules présentées en cumul (Pro = Essentiel + …, Premium = Pro + …),
+           comme les forfaits de maintenance plus bas. Sans ce cumul, des listes
+           à coches indépendantes laisseraient croire que Pro n'a pas de
+           formulaire de contact ou que Premium n'est pas responsive.
+           Chaque CTA passe la formule en paramètre d'URL : contact.html la lit
+           pour pré-sélectionner le budget correspondant (voir script.js). -->
       <div class="plan-grid">
         <article class="plan-card" data-reveal>
           <div class="plan-top"><h3 data-i18n="plan.essential.name">Essentiel</h3></div>
           <div class="plan-price">690 € – 990 €</div>
-          <p class="plan-desc" data-i18n="plan.essential.desc">Template personnalisé aux couleurs de l'entreprise, responsive, formulaire de contact, un aller-retour de corrections.</p>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.essential.f1">Template personnalisé à vos couleurs</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.essential.f2">Affichage adapté au mobile</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.essential.f3">Formulaire de contact</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.essential.f4">Un aller-retour de corrections</span></li>
+          </ul>
+          <a href="contact.html?formule=essentiel" class="btn btn-ghost plan-cta" data-i18n="plan.cta">Demander un devis</a>
         </article>
 
         <article class="plan-card is-featured" data-reveal>
@@ -116,28 +278,148 @@
             <span class="plan-badge" data-i18n="badge.popular">Le plus choisi</span>
           </div>
           <div class="plan-price">1 200 € – 1 800 €</div>
-          <p class="plan-desc" data-i18n="plan.pro.desc">Design semi-sur-mesure, galerie photo, Google Maps, liens réseaux sociaux, référencement local de base, deux allers-retours de corrections.</p>
+          <p class="plan-includes" data-i18n="plan.pro.includes">Tout l'Essentiel, plus :</p>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.pro.f1">Design semi-sur-mesure</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.pro.f2">Galerie photo</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.pro.f3">Plan Google Maps</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.pro.f4">Liens vers vos réseaux sociaux</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.pro.f5">Référencement local de base</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.pro.f6">Un second aller-retour de corrections</span></li>
+          </ul>
+          <a href="contact.html?formule=pro" class="btn btn-light plan-cta" data-i18n="plan.cta">Demander un devis</a>
         </article>
 
         <article class="plan-card" data-reveal>
           <div class="plan-top"><h3 data-i18n="plan.premium.name">Premium</h3></div>
           <div class="plan-price">2 200 € – 3 200 €</div>
-          <p class="plan-desc" data-i18n="plan.premium.desc">Design sur-mesure, module de réservation ou carte interactive, blog d'actualités, SEO renforcé, formation à la prise en main.</p>
+          <p class="plan-includes" data-i18n="plan.premium.includes">Tout le Pro, plus :</p>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.premium.f1">Design entièrement sur-mesure</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.premium.f2">Module de réservation ou carte interactive</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.premium.f3">Blog d'actualités</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="plan.premium.f4">Référencement renforcé</span></li>
+          </ul>
+          <a href="contact.html?formule=premium" class="btn btn-ghost plan-cta" data-i18n="plan.cta">Demander un devis</a>
         </article>
       </div>
 
+      <!-- Options en onglets (motif ARIA « tabs ») : la pastille sélectionne la
+           description affichée en dessous.
+           Tous les panneaux sont présents dans le HTML et visibles par défaut ;
+           c'est script.js qui masque les inactifs. Sans JavaScript, les onze
+           descriptions s'affichent donc les unes à la suite des autres — moins
+           compact, mais parfaitement lisible. -->
       <div class="options" data-reveal>
-        <h3 data-i18n="options.h3">À ajouter à toute formule</h3>
-        <div class="pill-row">
-          <span class="pill" data-i18n="opt.copy">Rédaction des textes</span>
-          <span class="pill" data-i18n="opt.photo">Séance photo pro</span>
-          <span class="pill" data-i18n="opt.ecommerce">E-commerce simple</span>
-          <span class="pill" data-i18n="opt.lang">Version FR / EN</span>
-          <span class="pill" data-i18n="opt.logo">Création de logo</span>
-          <span class="pill" data-i18n="opt.reviews">Automatisation des avis clients</span>
-          <span class="pill" data-i18n="opt.chatbot">Installation de chatbot</span>
+        <h3 id="options-title" data-i18n="options.h3">À ajouter à toute formule</h3>
+        <p class="options-hint" data-i18n="options.hint">Cliquez sur une option pour en savoir plus.</p>
+
+        <div class="pill-row" role="tablist" aria-labelledby="options-title">
+          <button type="button" class="pill" role="tab" id="tab-page" aria-controls="panel-page" data-i18n="opt.page">Page supplémentaire</button>
+          <button type="button" class="pill" role="tab" id="tab-copy" aria-controls="panel-copy" data-i18n="opt.copy">Rédaction des textes</button>
+          <button type="button" class="pill" role="tab" id="tab-photo" aria-controls="panel-photo" data-i18n="opt.photo">Séance photo pro</button>
+          <button type="button" class="pill" role="tab" id="tab-logo" aria-controls="panel-logo" data-i18n="opt.logo">Création de logo</button>
+          <button type="button" class="pill" role="tab" id="tab-email" aria-controls="panel-email" data-i18n="opt.email">Email professionnel</button>
+          <button type="button" class="pill" role="tab" id="tab-gmb" aria-controls="panel-gmb" data-i18n="opt.gmb">Fiche Google ou TripAdvisor</button>
+          <button type="button" class="pill" role="tab" id="tab-reviews" aria-controls="panel-reviews" data-i18n="opt.reviews">Automatisation des avis clients</button>
+          <button type="button" class="pill" role="tab" id="tab-lang" aria-controls="panel-lang" data-i18n="opt.lang">Version FR / EN</button>
+          <button type="button" class="pill" role="tab" id="tab-ecommerce" aria-controls="panel-ecommerce" data-i18n="opt.ecommerce">E-commerce simple</button>
+          <button type="button" class="pill" role="tab" id="tab-chatbot" aria-controls="panel-chatbot" data-i18n="opt.chatbot">Installation de chatbot</button>
+          <button type="button" class="pill" role="tab" id="tab-rgpd" aria-controls="panel-rgpd" data-i18n="opt.rgpd">Mise en conformité RGPD</button>
+        </div>
+
+        <div class="option-panels">
+          <div class="option-panel" role="tabpanel" id="panel-page" aria-labelledby="tab-page" tabindex="0">
+            <p data-i18n="opt.page.desc">Une page en plus de celles prévues dans votre formule : un nouveau service, votre équipe, une galerie, ou une page dédiée à une offre particulière.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-copy" aria-labelledby="tab-copy" tabindex="0">
+            <p data-i18n="opt.copy.desc">Nous écrivons les textes de votre site à partir d'un entretien avec vous : présentation de votre activité, descriptions de vos services, pages secondaires. Vous relisez et validez avant la mise en ligne.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-photo" aria-labelledby="tab-photo" tabindex="0">
+            <p data-i18n="opt.photo.desc">Une séance photo professionnelle de votre lieu, de vos produits ou de votre équipe. Les photos vous appartiennent et restent utilisables ailleurs : réseaux sociaux, cartes, supports imprimés.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-logo" aria-labelledby="tab-logo" tabindex="0">
+            <p data-i18n="opt.logo.desc">Un logo dessiné sur mesure pour votre activité, décliné dans les formats utiles au site, aux réseaux sociaux et à l'impression. Vous en recevez les fichiers sources.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-email" aria-labelledby="tab-email" tabindex="0">
+            <p data-i18n="opt.email.desc">Une adresse à votre nom de domaine, du type contact@votre-commerce.fr, plutôt qu'une adresse générique en gmail. Configuration sur votre téléphone et votre ordinateur comprise.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-gmb" aria-labelledby="tab-gmb" tabindex="0">
+            <p data-i18n="opt.gmb.desc">Création ou remise à niveau de votre fiche : informations, horaires, photos, catégories, zone desservie. C'est souvent le tout premier contact d'un client qui vous cherche depuis son téléphone.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-reviews" aria-labelledby="tab-reviews" tabindex="0">
+            <p data-i18n="opt.reviews.desc">Vos clients reçoivent automatiquement une invitation à laisser un avis après leur passage. Les meilleurs avis peuvent ensuite s'afficher directement sur votre site.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-lang" aria-labelledby="tab-lang" tabindex="0">
+            <p data-i18n="opt.lang.desc">Votre site entièrement traduit en anglais, avec un bouton pour basculer d'une langue à l'autre. Utile dès que vous accueillez une clientèle touristique ou de passage.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-ecommerce" aria-labelledby="tab-ecommerce" tabindex="0">
+            <p data-i18n="opt.ecommerce.desc">Une boutique en ligne pour un catalogue réduit : présentation des produits, panier et paiement sécurisé. Pensée pour vendre quelques références, pas pour gérer un stock important.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-chatbot" aria-labelledby="tab-chatbot" tabindex="0">
+            <p data-i18n="opt.chatbot.desc">Un assistant répond aux questions courantes de vos visiteurs — horaires, tarifs, disponibilités, accès — y compris quand vous n'êtes pas derrière votre écran.</p>
+          </div>
+          <div class="option-panel" role="tabpanel" id="panel-rgpd" aria-labelledby="tab-rgpd" tabindex="0">
+            <p data-i18n="opt.rgpd.desc">Mentions légales, politique de confidentialité et bandeau de consentement adaptés à votre activité, dès lors que votre site collecte des données ou utilise un outil de mesure d'audience.</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= DÉROULÉ D'UN PROJET ================= -->
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 data-i18n="process.h2">Comment ça se passe, concrètement.</h2>
+        <p data-i18n="process.p">Comptez deux à quatre semaines entre notre premier échange et la mise en ligne.</p>
+      </div>
+
+      <ol class="step-list">
+        <li class="step" data-reveal>
+          <div class="step-marker">
+            <span class="step-num" aria-hidden="true">1</span>
+            <span class="step-line" aria-hidden="true"></span>
+          </div>
+          <div class="step-body">
+            <h3 data-i18n="step1.title">Premier échange</h3>
+            <p data-i18n="step1.body">On se rencontre à Valence, ou on en parle simplement au téléphone. Vous nous racontez votre activité, votre clientèle et ce que le site doit vous apporter. Vous repartez avec un devis précis et gratuit, sans engagement.</p>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <div class="step-marker">
+            <span class="step-num" aria-hidden="true">2</span>
+            <span class="step-line" aria-hidden="true"></span>
+          </div>
+          <div class="step-body">
+            <h3 data-i18n="step2.title">Maquette</h3>
+            <p data-i18n="step2.body">Nous vous présentons une première version, aux couleurs de votre entreprise. Vous voyez à quoi ressemblera votre site avant qu'il ne soit construit, et nous ajustons ensemble.</p>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <div class="step-marker">
+            <span class="step-num" aria-hidden="true">3</span>
+            <span class="step-line" aria-hidden="true"></span>
+          </div>
+          <div class="step-body">
+            <h3 data-i18n="step3.title">Construction et contenus</h3>
+            <p data-i18n="step3.body">Textes, photos, horaires, carte, formulaire de contact : tout est mis en place. Vous validez au fur et à mesure, avec un à deux allers-retours de corrections selon la formule choisie.</p>
+          </div>
+        </li>
+
+        <li class="step" data-reveal>
+          <div class="step-marker">
+            <span class="step-num" aria-hidden="true">4</span>
+            <span class="step-line" aria-hidden="true"></span>
+          </div>
+          <div class="step-body">
+            <h3 data-i18n="step4.title">Mise en ligne</h3>
+            <p data-i18n="step4.body">Votre site part en ligne et vous recevez une sauvegarde complète des fichiers : il vous appartient. Ensuite, pour la moindre modification, un message suffit.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -190,22 +472,101 @@
 
         <div class="why-points">
           <div class="why-point">
-            <span class="why-icon"><i class="ph ph-map-pin"></i></span>
+            <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg></span>
             <p><strong data-i18n="why1.title">Un interlocuteur unique à Valence</strong><span data-i18n="why1.body">Disponible pour un rendez-vous en personne, pas un ticket dans une file d'attente.</span></p>
           </div>
           <div class="why-point">
-            <span class="why-icon"><i class="ph ph-arrows-clockwise"></i></span>
+            <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#i-arrows-clockwise"></use></svg></span>
             <p><strong data-i18n="why2.title">Un suivi dans la durée</strong><span data-i18n="why2.body">Réactivité au quotidien, pas juste une livraison ponctuelle puis plus rien.</span></p>
           </div>
           <div class="why-point">
-            <span class="why-icon"><i class="ph ph-storefront"></i></span>
+            <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#i-storefront"></use></svg></span>
             <p><strong data-i18n="why3.title">Un site pensé pour votre activité</strong><span data-i18n="why3.body">Menu, horaires, réservations, avis clients : les vrais besoins d'un commerce.</span></p>
           </div>
           <div class="why-point">
-            <span class="why-icon"><i class="ph ph-graduation-cap"></i></span>
-            <p><strong data-i18n="why4.title">Une prise en main accompagnée</strong><span data-i18n="why4.body">Pour gérer vous-même vos mises à jour du quotidien, sans dépendre de nous.</span></p>
+            <span class="why-icon"><svg class="icon" aria-hidden="true"><use href="#i-key"></use></svg></span>
+            <p><strong data-i18n="why4.title">Vous restez propriétaire de tout</strong><span data-i18n="why4.body">Le site et ses fichiers vous appartiennent. Vous pouvez partir quand vous voulez, avec une sauvegarde complète.</span></p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <!-- <details>/<summary> natifs : accordéon accessible sans une ligne de JS.
+       Le name="faq" partagé n'ouvre qu'une réponse à la fois (comportement
+       natif du navigateur). Le texte des réponses est également repris dans
+       le JSON-LD FAQPage du <head> : garder les deux synchronisés. -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 data-i18n="faq.h2">Les questions qu'on nous pose.</h2>
+      </div>
+
+      <div class="faq-list" data-reveal>
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q1">Pourquoi une fourchette de prix et pas un prix fixe ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a1">Parce que deux commerces n'ont pas les mêmes besoins. Trois choses font varier le prix à l'intérieur d'une formule : le nombre de pages, le degré de personnalisation du design et la complexité technique (réservation, carte interactive, boutique). Le devis, lui, est ferme : vous savez exactement ce que vous payez avant que nous commencions.</p>
+        </details>
+
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q2">Comment se passe le paiement ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a2">Nous en discutons au moment du devis et nous nous adaptons à votre trésorerie : échelonnement, paiement en plusieurs fois, rien n'est figé d'avance. C'est aussi ça, traiter avec quelqu'un de local plutôt qu'avec un formulaire d'abonnement.</p>
+        </details>
+
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q3">Combien de temps avant que mon site soit en ligne ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a3">Comptez deux à quatre semaines à partir du moment où nous avons vos contenus. Le délai dépend surtout de la rapidité avec laquelle vous nous transmettez vos textes et vos photos : c'est presque toujours ce qui fait avancer ou traîner un projet.</p>
+        </details>
+
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q4">Qui écrit les textes du site ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a4">Vous, dans la plupart des cas : personne ne connaît votre métier et vos clients mieux que vous. Nous vous guidons sur ce qu'il faut dire et à quel endroit. Si vous préférez ne pas vous en occuper, la rédaction complète est proposée en option.</p>
+        </details>
+
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q5">Et les photos ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a5">Vos propres photos conviennent souvent très bien, surtout pour un commerce. Si elles manquent ou ne rendent pas justice à votre lieu, une séance photo professionnelle est disponible en option.</p>
+        </details>
+
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q6">Mon site fonctionnera-t-il sur téléphone ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a6">Oui, sur toutes les formules, sans supplément. C'est même la priorité : la majorité de vos clients vous cherchera depuis un téléphone, souvent dans la rue, juste avant de pousser votre porte.</p>
+        </details>
+
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q7">À qui appartient le site une fois livré ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a7">À vous. Le site vous appartient et vous en recevez les fichiers. Vous n'êtes lié à personne : ni à nous, ni à un abonnement obligatoire pour qu'il reste en ligne.</p>
+        </details>
+
+        <details class="faq-item" name="faq">
+          <summary class="faq-q">
+            <span data-i18n="faq.q8">Que se passe-t-il si j'arrête la maintenance ?</span>
+            <svg class="icon faq-chevron" aria-hidden="true"><use href="#i-caret-down"></use></svg>
+          </summary>
+          <p class="faq-a" data-i18n="faq.a8">Nous vous remettons une sauvegarde complète de votre site. Vous êtes libre de changer d'hébergeur ou de prestataire quand vous le souhaitez, sans rien perdre. Le préavis est d'un mois, sans engagement de durée.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -221,16 +582,16 @@
 
         <div class="contact-actions">
           <a href="contact.html" class="btn btn-light">
-            <i class="ph ph-note-pencil"></i> <span data-i18n="cta.form">Remplir le formulaire</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-note-pencil"></use></svg> <span data-i18n="cta.form">Remplir le formulaire</span>
           </a>
           <a href="tel:+33660251797" class="btn btn-light">
-            <i class="ph ph-phone"></i> 06 60 25 17 97
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg> 06 60 25 17 97
           </a>
           <a href="mailto:contact@ambree.fr" class="contact-line">
-            <i class="ph ph-envelope-simple"></i> contact@ambree.fr
+            <svg class="icon" aria-hidden="true"><use href="#i-envelope-simple"></use></svg> contact@ambree.fr
           </a>
           <span class="contact-line">
-            <i class="ph ph-globe"></i> ambree.fr
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg> ambree.fr
           </span>
         </div>
       </div>
@@ -240,21 +601,55 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span class="footer-brand">
-      <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
-        <rect width="48" height="48" rx="14" fill="var(--accent)"/>
-        <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
-        <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
-      </svg>
-      ambree.
-    </span>
+  <div class="wrap footer-grid">
+    <div class="footer-brand-col">
+      <span class="footer-brand">
+        <svg width="24" height="24" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="14" fill="var(--accent)"/>
+          <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
+          <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
+        </svg>
+        ambree.
+      </span>
+      <p class="footer-tagline" data-i18n="footer.tagline">Sites vitrine sur mesure pour les commerçants, restaurateurs et artisans de Valence et de la Drôme.</p>
+    </div>
+
+    <nav class="footer-col" aria-labelledby="footer-nav-title">
+      <h2 class="footer-col-title" id="footer-nav-title" data-i18n="footer.navTitle">Le site</h2>
+      <ul>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#process" data-i18n="footer.process">Déroulé d'un projet</a></li>
+        <li><a href="#maintenance" data-i18n="nav.maintenance">Maintenance</a></li>
+        <li><a href="#faq" data-i18n="footer.faq">Questions fréquentes</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h2 class="footer-col-title" data-i18n="footer.contactTitle">Nous joindre</h2>
+      <ul class="footer-contact">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          <a href="tel:+33660251797">06 60 25 17 97</a>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-envelope-simple"></use></svg>
+          <a href="mailto:contact@ambree.fr">contact@ambree.fr</a>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg>
+          <span data-i18n="footer.address">10 allée Edith Piaf, 26000 Valence</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
     <span data-i18n="footer.copy">&copy; 2026 Ambree Studio — Valence, Drôme</span>
     <a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales</a>
   </div>
 </footer>
 
-<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-<script src="script.js?v=2"></script>
+<script src="script.js?v=12" defer></script>
 </body>
 </html>

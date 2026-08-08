@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Ambree Studio</title>
 <meta name="description" content="Décrivez votre projet de site web à Ambree Studio : vos coordonnées, votre activité et vos besoins. Réponse personnalisée, sans engagement.">
+<link rel="canonical" href="https://ambree.fr/contact.html">
+
+<!-- Aperçu au partage (SMS, WhatsApp, Facebook, LinkedIn…) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ambree Studio">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://ambree.fr/contact.html">
+<meta property="og:title" content="Contact — Ambree Studio">
+<meta property="og:description" content="Décrivez votre projet de site web : vos coordonnées, votre activité et vos besoins. Réponse personnalisée, sans engagement.">
+<meta property="og:image" content="https://ambree.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ambree Studio — création de sites web à Valence et dans la Drôme">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#c67139">
 
 <script>
   (function () {
@@ -23,9 +38,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
+
+<a class="skip-link" href="#contactForm" data-i18n="a11y.skip">Aller au contenu</a>
+
+<!-- Sprite d'icônes (Phosphor Regular, licence MIT) — sous-ensemble utilisé par
+     cette page. Voir COMPOSANTS.md pour la liste complète et la procédure. -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></symbol>
+<symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol>
+<symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 256 256"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 256 256"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></symbol>
+<symbol id="i-envelope-simple" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 256 256"><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"/></symbol>
+</svg>
 
 <div id="scroll-sentinel" aria-hidden="true"></div>
 
@@ -43,24 +73,31 @@
     <nav class="nav-links" id="navLinks">
       <a href="index.html#services" data-i18n="nav.services">Services</a>
       <a href="index.html#maintenance" data-i18n="nav.maintenance">Maintenance</a>
-      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      <a href="contact.html" data-i18n="nav.contact" aria-current="page">Contact</a>
       <span class="nav-locale">
-        <i class="ph ph-map-pin"></i> Valence &amp; Drôme
+        <svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg> Valence &amp; Drôme
       </span>
+      <a href="tel:+33660251797" class="btn btn-primary nav-cta-mobile">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg> 06 60 25 17 97
+      </a>
     </nav>
 
-    <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="cta.contact">Discutons de votre projet</a>
+    <!-- Sur la page de contact, le CTA « Discutons de votre projet » pointerait
+         vers la page courante : on propose l'appel direct à la place. -->
+    <a href="tel:+33660251797" class="btn btn-primary nav-cta">
+      <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg> 06 60 25 17 97
+    </a>
 
     <button class="lang-toggle" id="langToggle" aria-label="Switch to English">
       <span class="lang-flag" aria-hidden="true">🇬🇧</span>
     </button>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" aria-pressed="false">
-      <i class="ph ph-moon"></i>
+      <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
     </button>
 
     <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-      <i class="ph ph-list"></i>
+      <svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg>
     </button>
   </div>
 </header>
@@ -68,7 +105,7 @@
 <main>
   <section class="contact-hero">
     <div class="wrap">
-      <span class="eyebrow"><i class="ph ph-map-pin"></i> Valence &amp; Drôme</span>
+      <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg> Valence &amp; Drôme</span>
       <h1 data-i18n="contact.hero.h1">Parlons de votre projet.</h1>
       <p data-i18n="contact.hero.sub">Remplissez ce formulaire avec vos coordonnées et quelques mots sur votre activité. Nous revenons vers vous avec un devis personnalisé.</p>
     </div>
@@ -76,11 +113,27 @@
 
   <section class="contact-main">
     <div class="wrap contact-grid">
-      <form class="contact-form" id="contactForm">
+      <!-- novalidate désactive les bulles natives du navigateur au profit de
+           messages en français/anglais, placés sous le champ et annoncés aux
+           lecteurs d'écran (aria-describedby + role="alert"). -->
+      <form class="contact-form" id="contactForm" novalidate>
+        <p class="form-required-note">
+          <span class="req" aria-hidden="true">*</span> <span data-i18n="form.requiredNote">Champs obligatoires</span>
+        </p>
+
+        <!-- Piège à robots : hors écran et non focusable, donc invisible pour
+             un visiteur mais rempli par la plupart des robots à spam. Une
+             soumission où ce champ est rempli est abandonnée silencieusement. -->
+        <div class="hp" aria-hidden="true">
+          <label for="cf-website">Ne pas remplir ce champ</label>
+          <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
         <div class="field-row">
           <div class="field">
-            <label for="cf-name" data-i18n="label.fullName">Nom complet</label>
-            <input type="text" id="cf-name" name="name" autocomplete="name" required>
+            <label for="cf-name"><span data-i18n="label.fullName">Nom complet</span> <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required aria-describedby="err-name">
+            <p class="field-error" id="err-name" role="alert" hidden></p>
           </div>
           <div class="field">
             <label for="cf-company" data-i18n="label.companyActivity">Entreprise / activité</label>
@@ -90,8 +143,9 @@
 
         <div class="field-row">
           <div class="field">
-            <label for="cf-email" data-i18n="label.email">Email</label>
-            <input type="email" id="cf-email" name="email" autocomplete="email" required>
+            <label for="cf-email"><span data-i18n="label.email">Email</span> <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required aria-describedby="err-email">
+            <p class="field-error" id="err-email" role="alert" hidden></p>
           </div>
           <div class="field">
             <label for="cf-phone" data-i18n="label.phone">Téléphone</label>
@@ -111,36 +165,49 @@
           </div>
           <div class="field">
             <label for="cf-budget" data-i18n="label.budget">Budget indicatif</label>
+            <!-- data-plan sert à la pré-sélection depuis les cartes tarifs
+                 (contact.html?formule=pro). Ne pas ajouter d'attribut value :
+                 sans value, FormData renvoie le texte complet de l'option,
+                 bien plus lisible dans l'email reçu. -->
+            <!-- « Je ne sais pas encore » en premier, donc sélectionné par
+                 défaut : sinon toute demande arrivant sans passer par une carte
+                 tarif serait étiquetée « Essentiel » alors que le visiteur n'a
+                 rien choisi. -->
             <select id="cf-budget" name="budget">
-              <option data-i18n="option.budgetEssential">Essentiel (690 € – 990 €)</option>
-              <option data-i18n="option.budgetPro">Pro (1 200 € – 1 800 €)</option>
-              <option data-i18n="option.budgetPremium">Premium (2 200 € – 3 200 €)</option>
               <option data-i18n="option.budgetUnsure">Je ne sais pas encore</option>
+              <option data-plan="essentiel" data-i18n="option.budgetEssential">Essentiel (690 € – 990 €)</option>
+              <option data-plan="pro" data-i18n="option.budgetPro">Pro (1 200 € – 1 800 €)</option>
+              <option data-plan="premium" data-i18n="option.budgetPremium">Premium (2 200 € – 3 200 €)</option>
             </select>
           </div>
         </div>
 
         <div class="field">
-          <label for="cf-message" data-i18n="label.message">Votre projet en quelques mots</label>
-          <textarea id="cf-message" name="message" required placeholder="Votre activité, vos besoins, vos délais..." data-i18n-placeholder="placeholder.message"></textarea>
+          <label for="cf-message"><span data-i18n="label.message">Votre projet en quelques mots</span> <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="cf-message" name="message" required placeholder="Votre activité, vos besoins, vos délais..." data-i18n-placeholder="placeholder.message" aria-describedby="err-message"></textarea>
+          <p class="field-error" id="err-message" role="alert" hidden></p>
         </div>
 
-        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Envoyer ma demande</button>
-        <p class="form-note" data-i18n="contact.form.note">En cliquant sur envoyer, votre messagerie s'ouvrira avec un message pré-rempli à nous adresser.</p>
-        <p class="form-success" id="formSuccess" hidden data-i18n="contact.form.success">Votre messagerie va s'ouvrir avec votre message pré-rempli. Il ne restera plus qu'à l'envoyer.</p>
+        <button type="submit" class="btn btn-primary" id="formSubmit" data-i18n="contact.form.submit">Envoyer ma demande</button>
+        <p class="form-note" id="formNote" data-i18n="contact.form.note">En cliquant sur envoyer, votre messagerie s'ouvrira avec un message pré-rempli à nous adresser.</p>
+
+        <!-- aria-live : le message de retour est annoncé aux lecteurs d'écran
+             sans qu'il y ait eu de changement de page. -->
+        <p class="form-success" id="formSuccess" role="status" aria-live="polite" hidden></p>
+        <p class="form-error-global" id="formError" role="alert" hidden></p>
       </form>
 
       <aside class="contact-aside">
         <h2 data-i18n="contact.aside.h2">Une autre façon de nous joindre</h2>
 
         <a class="contact-aside-row" href="tel:+33660251797">
-          <i class="ph ph-phone"></i> 06 60 25 17 97
+          <span class="aside-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span> 06 60 25 17 97
         </a>
         <a class="contact-aside-row" href="mailto:contact@ambree.fr">
-          <i class="ph ph-envelope-simple"></i> contact@ambree.fr
+          <span class="aside-icon"><svg class="icon" aria-hidden="true"><use href="#i-envelope-simple"></use></svg></span> contact@ambree.fr
         </a>
         <span class="contact-aside-row">
-          <i class="ph ph-globe"></i> ambree.fr
+          <span class="aside-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg></span> ambree.fr
         </span>
 
         <p class="contact-aside-note" data-i18n="contact.aside.note">Un vrai interlocuteur vous répond, à Valence, pas un robot.</p>
@@ -150,21 +217,55 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span class="footer-brand">
-      <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
-        <rect width="48" height="48" rx="14" fill="var(--accent)"/>
-        <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
-        <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
-      </svg>
-      ambree.
-    </span>
+  <div class="wrap footer-grid">
+    <div class="footer-brand-col">
+      <a class="footer-brand" href="index.html">
+        <svg width="24" height="24" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="14" fill="var(--accent)"/>
+          <rect x="12" y="15" width="20" height="5" rx="2.5" fill="var(--bg)"/>
+          <circle cx="16" cy="30" r="6" fill="var(--sage-light)"/>
+        </svg>
+        ambree.
+      </a>
+      <p class="footer-tagline" data-i18n="footer.tagline">Sites vitrine sur mesure pour les commerçants, restaurateurs et artisans de Valence et de la Drôme.</p>
+    </div>
+
+    <nav class="footer-col" aria-labelledby="footer-nav-title">
+      <h2 class="footer-col-title" id="footer-nav-title" data-i18n="footer.navTitle">Le site</h2>
+      <ul>
+        <li><a href="index.html#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="index.html#process" data-i18n="footer.process">Déroulé d'un projet</a></li>
+        <li><a href="index.html#maintenance" data-i18n="nav.maintenance">Maintenance</a></li>
+        <li><a href="index.html#faq" data-i18n="footer.faq">Questions fréquentes</a></li>
+        <li><a href="contact.html" aria-current="page" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h2 class="footer-col-title" data-i18n="footer.contactTitle">Nous joindre</h2>
+      <ul class="footer-contact">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+          <a href="tel:+33660251797">06 60 25 17 97</a>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-envelope-simple"></use></svg>
+          <a href="mailto:contact@ambree.fr">contact@ambree.fr</a>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg>
+          <span data-i18n="footer.address">10 allée Edith Piaf, 26000 Valence</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
     <span data-i18n="footer.copy">&copy; 2026 Ambree Studio — Valence, Drôme</span>
     <a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales</a>
   </div>
 </footer>
 
-<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-<script src="script.js?v=2"></script>
+<script src="script.js?v=12" defer></script>
 </body>
 </html>
