@@ -680,6 +680,145 @@ if (contactForm) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Trame de fond
+//
+// Points espacés qui s'écartent légèrement du curseur et s'éclaircissent à son
+// approche. Volontairement discrète : elle doit se sentir sans se voir.
+//
+// Trois garde-fous, à conserver si les réglages sont modifiés :
+//  - la couleur est lue dans --accent, jamais codée en dur, pour que la trame
+//    suive le thème clair comme sombre ;
+//  - rien n'est attaché au tactile ni en mouvement réduit — l'effet dépend d'un
+//    curseur, et il n'a pas à s'imposer à qui demande moins d'animation ;
+//  - la boucle s'arrête dès que le curseur s'immobilise : au repos, le coût
+//    processeur retombe à zéro au lieu de tourner en continu.
+//
+// Réglages testés : au-delà d'environ 0.16 d'opacité au repos, un point situé
+// derrière un caractère commence à entamer sérieusement le contraste du texte.
+// ---------------------------------------------------------------------------
+
+const TRAME = {
+  pas: 96,            // écart entre deux points, en pixels
+  alphaRepos: 0.06,
+  alphaActif: 0.20,
+  rayon: 1.6,
+  portee: 180,        // rayon d'influence du curseur
+  decalage: 5,        // déplacement maximal d'un point, en pixels
+};
+
+const trameCanvas = document.getElementById("trame");
+const trameCtx = trameCanvas ? trameCanvas.getContext("2d") : null;
+
+// L'effet repose sur un curseur : inutile au doigt. Et il n'a rien à faire
+// chez un visiteur qui a demandé à réduire les animations.
+const trameActive = !!trameCtx
+  && window.matchMedia("(hover: hover) and (pointer: fine)").matches
+  && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let trameL = 0, trameH = 0;
+let trameCible = { x: -9999, y: -9999 };
+let trameLisse = { x: -9999, y: -9999 };
+let trameRaf = 0;
+let trameDernierMouvement = 0;
+let trameCouleur = { r: 198, g: 113, b: 57 };
+
+function trameDimensionner() {
+  if (!trameCtx) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  trameL = window.innerWidth;
+  trameH = window.innerHeight;
+  trameCanvas.width = Math.floor(trameL * dpr);
+  trameCanvas.height = Math.floor(trameH * dpr);
+  trameCanvas.style.width = trameL + "px";
+  trameCanvas.style.height = trameH + "px";
+  trameCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+function rafraichirTrame() {
+  if (!trameCtx) return;
+  const v = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
+  const n = parseInt(v.slice(1), 16);
+  if (!Number.isNaN(n)) trameCouleur = { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+  if (trameL) trameDessiner();   // applyTheme() peut appeler avant le dimensionnement
+}
+
+function trameDessiner() {
+  if (!trameCtx) return;
+  trameCtx.clearRect(0, 0, trameL, trameH);
+
+  const { pas, alphaRepos, alphaActif, rayon, portee, decalage } = TRAME;
+  const { r, g, b } = trameCouleur;
+
+  for (let x = pas / 2; x < trameL + pas; x += pas) {
+    for (let y = pas / 2; y < trameH + pas; y += pas) {
+      const dx = x - trameLisse.x;
+      const dy = y - trameLisse.y;
+      const dist = Math.hypot(dx, dy);
+
+      let px = x, py = y, t = 0;
+      if (dist < portee && dist > 0.001) {
+        t = 1 - dist / portee;
+        t = t * t * (3 - 2 * t);                 // lissage aux extrémités
+        const angle = Math.atan2(dy, dx);
+        px += Math.cos(angle) * decalage * t;    // le point s'écarte du curseur
+        py += Math.sin(angle) * decalage * t;
+      }
+
+      trameCtx.beginPath();
+      trameCtx.arc(px, py, rayon + t * 0.8, 0, Math.PI * 2);
+      trameCtx.fillStyle = `rgba(${r},${g},${b},${(alphaRepos + (alphaActif - alphaRepos) * t).toFixed(3)})`;
+      trameCtx.fill();
+    }
+  }
+}
+
+function trameBoucle() {
+  trameLisse.x += (trameCible.x - trameLisse.x) * 0.1;
+  trameLisse.y += (trameCible.y - trameLisse.y) * 0.1;
+  trameDessiner();
+
+  const converge = Math.hypot(trameCible.x - trameLisse.x, trameCible.y - trameLisse.y) < 0.4;
+  if (converge && performance.now() - trameDernierMouvement > 400) {
+    trameRaf = 0;   // plus rien ne tourne tant que le curseur ne bouge pas
+    return;
+  }
+  trameRaf = requestAnimationFrame(trameBoucle);
+}
+
+if (trameCtx) {
+  // La trame est dessinée pour tout le monde : au doigt comme en mouvement
+  // réduit, elle reste un simple grain fixe, tracé une seule fois, sans aucun
+  // coût par la suite. Seule la réaction au curseur est conditionnelle.
+  trameDimensionner();
+  rafraichirTrame();
+
+  window.addEventListener("resize", () => {
+    trameDimensionner();
+    trameDessiner();
+  });
+
+  // La trame surveille elle-même le thème plutôt que d'être appelée depuis
+  // applyTheme() : cette fonction s'exécute plus haut dans le fichier, avant
+  // que les constantes ci-dessus ne soient initialisées, et l'appel échouait
+  // en zone morte temporelle — ce qui interrompait tout le reste du script.
+  new MutationObserver(rafraichirTrame).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+}
+
+if (trameActive) {
+  window.addEventListener("mousemove", (e) => {
+    trameCible = { x: e.clientX, y: e.clientY };
+    // Au tout premier mouvement, on cale la position lissée sur le curseur :
+    // sinon la trame met deux secondes à le rattraper en balayant l'écran.
+    if (trameLisse.x === -9999) trameLisse = { x: trameCible.x, y: trameCible.y };
+    trameDernierMouvement = performance.now();
+    if (!trameRaf) trameRaf = requestAnimationFrame(trameBoucle);
+  });
+}
+
 // 3D tilt + cursor-follow glow, driven by pointermove (not scroll).
 // `zone` receives the is-active class and reports pointer position.
 // `photo` gets the tilt/glow. `mark` (optional) gets an inverse parallax shift.

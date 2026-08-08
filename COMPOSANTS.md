@@ -45,6 +45,21 @@ Fonction générique : incline légèrement un panneau en suivant la souris (±1
 **Pour l'appliquer ailleurs** : ajouter le CSS `transition`, `transform-style: preserve-3d` et le pseudo-élément `::after` (halo) sur le nouvel élément (copier le bloc `.why-photo` dans `styles.css` comme modèle), puis appeler `initTiltCard({ zone: monElement, photo: monElement })` dans `script.js`.
 **Sur mobile/tactile** : pas de curseur, donc pas de survol possible. `initTiltCard` détecte ça via `(hover: hover) and (pointer: fine)` et n'attache rien. À la place, une animation CSS `@media (hover: none)` se déclenche une seule fois, exactement quand l'élément entre à l'écran au scroll — en réutilisant la classe `.is-visible` déjà posée par le système de révélation au scroll (`[data-reveal]`/IntersectionObserver dans `script.js`), plutôt qu'une boucle infinie déconnectée ou l'API expérimentale `animation-timeline: view()` (testée, peu fiable). Keyframes : `tilt-in-hero`, `tilt-in-mark`, `tilt-in-why` dans `styles.css`. Si tu ajoutes le tilt à un nouvel élément, pense à lui mettre `data-reveal` (pour avoir `.is-visible`) et à créer son propre `@keyframes tilt-in-...` déclenché par `.is-visible` sous `@media (hover: none)`, sinon il restera figé sur téléphone.
 
+### Trame de fond (`.trame`, section « Trame de fond » de `script.js`)
+Canvas plein écran en fond de page, présent sur les trois pages : des points espacés qui s'écartent légèrement du curseur et s'éclaircissent à son approche. Librement inspirée d'un composant « kinetic grid » du catalogue 21st, mais entièrement réécrite — l'original était un quadrillage blanc et bleu sur fond noir, à l'opposé de la charte.
+Réglages dans l'objet `TRAME` en tête de section. L'intensité retenue est la plus discrète des trois testées.
+
+**Trois garde-fous à conserver si les réglages changent :**
+1. La couleur est lue dans `--accent`, jamais codée en dur : la trame suit le thème (terracotta sur crème, orangé clair sur charbon).
+2. **La boucle s'arrête** dès que le curseur s'immobilise (`trameRaf = 0`). L'original recalculait tout en permanence ; ici le coût au repos est nul. Ne pas transformer ça en boucle continue.
+3. Au tactile et en mouvement réduit, **seul le dessin statique** est réalisé — une fois, sans aucun coût ensuite. Seule la réaction au curseur est conditionnelle.
+
+**Contraste** : au-delà d'environ `alphaRepos: 0.16`, un point situé derrière un caractère entame sérieusement la lisibilité. Au réglage actuel (0.06), le texte atténué passe de 6,26:1 à 5,90:1 en thème clair — toujours au-dessus du seuil AA.
+
+**`pointer-events: none` est indispensable** sur le canvas : sans lui, il intercepterait tous les clics de la page. Le `z-index: -1` le place sous le contenu sans avoir à positionner `<main>` ni `<footer>`.
+
+⚠️ **La trame ne doit pas être rafraîchie depuis `applyTheme()`** : cette fonction s'exécute plus haut dans le fichier, avant l'initialisation des constantes de la trame, et l'appel échouait en zone morte temporelle — ce qui interrompait silencieusement tout le reste du script. Le suivi du thème passe donc par un `MutationObserver` sur `data-theme`, autonome et insensible à l'ordre des blocs.
+
 ### Apparition au scroll (`[data-reveal]`)
 Ajouter l'attribut `data-reveal` à n'importe quel élément pour qu'il apparaisse en fondu/glissé quand il entre dans l'écran. Géré par `IntersectionObserver` (pas d'écouteur de scroll). Respecte le mode mouvement réduit.
 

@@ -1,0 +1,5 @@
+# Pages de test locales, jamais destinées à la mise en ligne.
+# Le site se déployant automatiquement depuis main, tout fichier committé
+# se retrouve publié : ce garde-fou évite qu'un `git add -A` distrait
+# envoie un prototype en production.
+_demo-*.html

@@ -24,11 +24,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 
 <a class="skip-link" href="#top" data-i18n="a11y.skip">Aller au contenu</a>
+
+<!-- Trame de fond animée (voir la section « Trame de fond » de script.js).
+     Purement décorative, donc masquée aux lecteurs d'écran. -->
+<canvas class="trame" id="trame" aria-hidden="true"></canvas>
 
 <!-- Sprite d'icônes (Phosphor Regular, licence MIT) — sous-ensemble utilisé par
      cette page. Voir COMPOSANTS.md pour la liste complète et la procédure. -->
@@ -191,6 +195,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=12" defer></script>
+<script src="script.js?v=13" defer></script>
 </body>
 </html>
